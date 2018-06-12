@@ -8,7 +8,7 @@
 * `|` is a pipe which indicates the **sum type** or logical disjunction. In this example, a `Foo` value is either `Fizz` *or* `Buzz`.
 
 ### Exercises: Mood Swing
-See [Exercise01.md](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter04/Exercise01.md) and [`mood.hs`](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter04/mood.hs).
+See [exercise01.md](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter04/exercise01.md) and [`mood.hs`](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter04/mood.hs).
 
 ## Numeric Types
 
