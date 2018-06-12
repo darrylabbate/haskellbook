@@ -1,11 +1,14 @@
 # Chapter 4: Basic Datatypes
 
-## Data Declarations
+## 4.3 Data Declarations
 
 `data Foo = Fizz | Buzz`
-* `Foo` is a **type constructor**
-* `Fizz` and `Buzz` are **data constructors**
-* `|` is a pipe which indicates the **sum type** or logical disjunction. In this example, a `Foo` value is either `Fizz` *or* `Buzz`
+* `Foo` is a **type constructor**.
+* `Fizz` and `Buzz` are **data constructors**.
+* `|` is a pipe which indicates the **sum type** or logical disjunction. In this example, a `Foo` value is either `Fizz` *or* `Buzz`.
+
+### Exercises: Mood Swing
+See [Exercise01.md](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter04/Exercise01.md) and [`mood.hs`](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter04/mood.hs).
 
 ## Numeric Types
 
@@ -44,4 +47,4 @@ Prelude> if False then t else f
 * `True` returns `then` (`t`).
 * `False` returns `else` (`f`).
 
-If-expressions can only be avaluated to `Bool`.
+If-expressions can only be evaluated to `Bool`.
