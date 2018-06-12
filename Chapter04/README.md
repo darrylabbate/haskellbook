@@ -1,6 +1,6 @@
 # Chapter 4: Basic Datatypes
 
-## 4.3 Data Declarations
+## 4.3 Data declarations
 
 `data Foo = Fizz | Buzz`
 * `Foo` is a **type constructor**.
@@ -8,11 +8,13 @@
 * `|` is a pipe which indicates the **sum type** or logical disjunction. In this example, a `Foo` value is either `Fizz` *or* `Buzz`.
 
 ### Exercises: Mood Swing
+
 See [exercise01.md](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter04/exercise01.md) and [`mood.hs`](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter04/mood.hs).
 
-## Numeric Types
+## 4.4 Numeric types
 
 ### Integral numbers
+
 * `Int`: A fixed-precision integer with a theoretical range.
   * An artifact of legacy hardware support. Use `Integer`.
   * Use `maxBound` and `minBound` from `GHC.Int` to find limitations of `Int`, `Int8`, `Int16`, `Int32` and `Int64`.
@@ -20,6 +22,7 @@ See [exercise01.md](https://github.com/rootbeersoup/haskellbook/blob/master/Chap
 * `Integer`: Same as `Int`, but supports arbitrarily large or small numbers.
 
 ### Fractional numbers
+
 * `Float`: Single-precision floating-point numbers.
 * `Double`: Double-precision floating-point numbers.
 * `Rational`: A fractional number represented as a ratio of two integers. `1 / 2 :: Rational` will be a value carrying two `Integer` values; the numerator `1` and the denominator `2`. It  represents a ratio of 1:2.
@@ -28,13 +31,20 @@ See [exercise01.md](https://github.com/rootbeersoup/haskellbook/blob/master/Chap
 
 All numeric datatypes have typeclass intances of `Num`.
 
-## Comparing Values
+## 4.5 Comparing values
 
 * `==`, `<`, `>`, `<=`, `>=` and `/=` are all Boolean comparison functions.
 * `&&` is the infix operator for Boolean conjunction e.g. **and**.
 * `||` is the infix operator for Boolean *disjunction* e.g. **or**.
 
-## Conditionals with if-then-else
+## 4.6 Go on and bool me
+
+### Exercises: Find the Mistakes
+
+See [exercise02.md](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter04/exercise02.md).
+
+### Conditionals with if-then-else
+
 Haskell doesn't have 'if' statements, but does have 'if' *expressions*.
 ```haskell
 Prelude> let t = "Truthin'"
