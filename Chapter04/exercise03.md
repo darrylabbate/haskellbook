@@ -20,17 +20,17 @@
       * `True && False`
       * `False`
     * `(8 == 8) && 9` returns an error; `9` is a literal and is neither `True` or `False`. It does not meet the necessary parameters to be included in a `&&` function.
-1. 
+1. *
     ```haskell
     isPalindrome :: (Eq a) => [a] -> Bool
     isPalindrome x = x == reverse x
     ```
-1.
+1. *
     ```haskell
     myAbs :: Integer -> Integer
     myAbs n = if n < 0 then n * (-1) else n
     ```
-1.
+1. *
     ```haskell
     f :: (a, b) -> (c, d) -> ((b, d), (a, c))
     f x y = ((snd x, snd y), (fst x, fst y))
