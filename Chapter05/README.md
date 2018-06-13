@@ -56,8 +56,7 @@ Prelude> :type fifteen
 fifteen :: Int
 ```
 
-### Exercises: Type Matching
-See: [exercise01.md](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter05/exercise01.md)
+### [Exercises: Type Matching](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter05/exercise01.md)
 
 ## 5.4 Currying
 
@@ -112,3 +111,30 @@ Prelude> (+) 1 2
 Prelude> uncurry (+) (1, 2)
 3
 ```
+
+### Sectioning
+
+Sectioning refers to partial application of infix operators. The special syntax allows you to choose which argument to partially apply the operator to.
+
+This does not apply to cumulative functions such as addition, since order does not matter. Here's an example using addition as an infix operator with Strings:
+```haskell
+Prelude> let celebrate = (++ " woot!")
+Prelude> celebrate "naptime"
+"naptime woot!"
+Prelude> celebrate "dogs"
+"dogs woot!"
+```
+We can use this sectioning syntax with prefix operators as well, enclosing them with backticks to make the infix:
+```haskell
+Prelude> elem 9 [1..10]
+True
+Prelude> 9 `elem` [1..10]
+True
+Prelude> let c = (`elem` [1..10])
+Prelude> c 9
+True
+Prelude> c 25
+False
+```
+
+### [Exercises: Type Arguments](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter05/exercise02.md)
