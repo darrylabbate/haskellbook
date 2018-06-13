@@ -1,5 +1,5 @@
 nonsense :: Bool -> Integer
-nonsense True = 805
+nonsense True  = 805
 nonsense False = 31337
 
 -- All of these are the same function, giving the same results
