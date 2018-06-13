@@ -56,3 +56,27 @@ Prelude> :type fifteen
 fifteen :: Int
 ```
 
+### Exercises: Type Matching
+See: [exercise01.md](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter05/exercise01.md)
+
+## 5.4 Currying
+
+Currying refers to the syntactic convenience of nesting multiple functions to create the illusion of multiple parameters in a single function.
+
+Because of a function's default right-associative behavior, types are implicitly parenthsized as such:
+```haskell
+f :: a -> a -> a
+-- associates to
+f :: a -> (a -> a)
+```
+And
+```haskell
+map :: (a -> b) -> [a] -> [b]
+map :: (a -> b) -> ([a] -> [b])
+```
+
+The right-associations do not denote precedence or priority, but rather, serve to group the parameters into a single argument and result.
+
+When a lambda expression appears to have more than one parameter, it's called a nested lambda. Lambdas can be nested more than twice, but it always reduces to one argument and one result.
+
+Explicit parenthesization can be utilized to indicate order of evaluation, but does not necessarily mean the result type evaluates first.
