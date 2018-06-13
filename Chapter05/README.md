@@ -80,3 +80,33 @@ The right-associations do not denote precedence or priority, but rather, serve t
 When a lambda expression appears to have more than one parameter, it's called a nested lambda. Lambdas can be nested more than twice, but it always reduces to one argument and one result.
 
 Explicit parenthesization can be utilized to indicate order of evaluation, but does not necessarily mean the result type evaluates first.
+
+### Currying
+
+```haskell
+Prelude> let curry f a b = f (a, b)
+Prelude> :t curry
+curry :: ((t1, t2) -> t) -> t1 -> t2 -> t
+Prelude> :t fst
+fst :: (a, b) -> a
+Prelude> :t curry fst
+curry fst :: t -> b -> t
+Prelude> fst (1, 2)
+1
+Prelude> curry fst 1 2
+1
+```
+
+### Uncurrying
+
+```haskell
+Prelude> let uncurry f (a, b) = f a b
+Prelude> :t uncurry
+uncurry :: (t1 -> t2 -> t) -> (t1, t2) -> t
+Prelude> :t (+)
+(+) :: Num a => a -> a -> a
+Prelude> (+) 1 2
+3
+Prelude> uncurry (+) (1, 2)
+3
+```
