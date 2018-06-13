@@ -63,6 +63,8 @@ See: [exercise01.md](https://github.com/rootbeersoup/haskellbook/blob/master/Cha
 
 Currying refers to the syntactic convenience of nesting multiple functions to create the illusion of multiple parameters in a single function.
 
+`curry` is syntactic sugar for operating with tuples.
+
 Because of a function's default right-associative behavior, types are implicitly parenthsized as such:
 ```haskell
 f :: a -> a -> a
