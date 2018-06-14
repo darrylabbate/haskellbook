@@ -40,7 +40,7 @@ We *know* `a` is the same type from `(a, b)` because the type signature of `fst`
 
 ### Typeclass-constrained type variables
 
-A typeclass-constrained variable is named for when we don't fully know the concrete type of a function e.g. `(+) :: Num a => a -> a -> a`. See: Polymorphic. Typeclass-constraints represent the maximum ambiguity a function could have.
+A typeclass-constrained variable is named for when we don't fully know the concrete type of a function e.g. `(+) :: Num a => a -> a -> a`. See: Polymorphic. Typeclass-constraints represent the maximum ambiguity a function could have. Put simply, `a` can be anything, as long as it has the subtype `Num`.
 
 To turn the number 15 into a conrete type of `Int`:
 ```haskell
