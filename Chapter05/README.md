@@ -138,3 +138,22 @@ False
 ```
 
 ### [Exercises: Type Arguments](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter05/exercise02.md)
+
+## 5.5 Polymorphism
+
+Polymorphic - *made of many forms*
+
+Polmorphic type variables allow the ability to return results different from the type of the argument.
+
+In broad terms, tpye signatures may have three different types:
+* Concrete
+* Constrained polymorphic
+* Parametrically polymorphic
+
+Parametric polymorphism is broader, allowing the final, concrete type to be anything. Constrained polymorphism decreases the number of concrete types a final output could be, but increases what you can do with it.
+
+To re-summarize:
+* Anything with a lowercase name is a polymorphic type variable.
+* A capitalized name is a concrete type.
+
+### [Exercises: Parametricity](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter05/exercise03.md)
