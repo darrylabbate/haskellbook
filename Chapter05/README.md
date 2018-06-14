@@ -157,3 +157,57 @@ To re-summarize:
 * A capitalized name is a concrete type.
 
 ### [Exercises: Parametricity](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter05/exercise03.md)
+
+## 5.6 Type inference
+
+Type inference in Haskell means we are not obligated to assert a type for every expression. Haskell infers the most generally applicable type that is still correct.
+
+In the first example, Haskell infers `[Char]` because `" Julie"` is a `String` (`[Char]`):
+```haskell
+Prelude> let myGreet x = x ++ " Julie"
+Prelude> myGreet "hello"
+"hello Julie"
+Prelude> :type myGreet
+myGreet :: [Char] -> [Char]
+```
+In the second example, Haskell can only infer a polymorphic type of `[a]` since we took out the `[Char]`(`" Julie"`) type:
+```haskell
+Prelude> let myGreet x y = x ++ y
+Prelude> :type myGreet
+myGreet :: [a] -> [a] -> [a]
+```
+
+### [Exercises: Apply Yourself](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter05/exercise04.md)
+
+## 5.7 Asserting types for declarations.
+
+Type inference can be handy, and is definitely important to know and understand. However, we will mostly be declaring our own types, rather than relying on type inference. Type signature provide guidance and a means of verbosity. This is important for project scalability and maintainability.
+
+Most Haskell code will be laid out as such:
+```haskell
+triple :: Integer -> Integer
+triple x = x * 3
+```
+
+Though rarely used, we can declare types locally within `where` and `let`:
+```haskell
+triple x = tripleIt x
+  where tripleIt :: Integer -> Integer
+        tripleIt y = y * 3
+```
+Checking the type in GHCi:
+```haskell
+Prelude> :t triple
+triple :: Integer -> Integer
+```
+
+Typeclass constraints will inhibit our ability to decalre types with incompatible paramters:
+```haskell
+Prelude> let x = 5 + 5 :: String
+No instance for (Num String) arising from a use of ‘+’
+In the expression: 5 + 5 :: String
+In an equation for ‘x’: x = 5 + 5 :: String
+```
+Naturally, the `(+)` function cannot accept an argument of `String`.
+
+## [5.8 Chapter Exercises](https://github.com/rootbeersoup/haskellbook/blob/master/Chapter05/exercise05.md)
