@@ -3,13 +3,13 @@
 ### Multiple Choice
 
 1. A value of type `[a]` is
-  * c) a list whose elements are all of some type `a`
+    * c) a list whose elements are all of some type `a`
 1. A function of type `[[a]] -> [a]` could
-  * a) take a list of strings as an argument
+    * a) take a list of strings as an argument
 1. A function of type `[a] -> Int -> a`
-  * b) returns one elemtn of type `a` from a list
+    * b) returns one elemtn of type `a` from a list
 1. A funciton a type `(a, b) -> a`
-  * c) takes a tuple argument and returns the first value
+    * c) takes a tuple argument and returns the first value
 
 ### Determine the type
 
