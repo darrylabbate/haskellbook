@@ -67,7 +67,7 @@
 1. Yup.
 1. `c' x y = y`
 1. `r x = take 1 x`
-1. `co a b c = b $ a c` This one fried my brain. No idea why it works.
+1. The type signature is for the function `(.)`.
 1. `a x y = x` Type signature really doesn't make sense. The authors do this a lot and I find it to be learning-inhibitive. I got the end result which was the best I could do.
 1. `a' x y = x y`
 
@@ -114,3 +114,29 @@
       print ((+) 0 blah)
         where blah = negate 1
     ```
+
+### Type-Kwon-Do
+
+1. `h = g . f` or `h = (.) g f` or `h x = g $ f x`
+1. `e = w . q` or `e = (.) w q` or `e x = w $ q x`
+1. `xform (x, y) = (xz x, yz y)`
+1. I had a lot of trouble wrapping my head around this. So let's work this out:
+    ```haskell
+    f :: x -> y
+    f = undefined
+
+    g = y -> (w, z)
+    g = undefined
+
+    munge :: (x -> y) -> (y -> (w, z)) -> x -> w
+    munge f g x = fst . g $ f x
+    -- or
+    munge f g x = fst . g . f $ x
+    -- or
+    munge f g x = fst (g (f x))
+    -- or
+    munge f g x = fst . g $ (f x)
+    -- or
+    munge f g x = fst $ g (f x)
+    ```
+Still don't understand that one fully but I'm confident I'll get the hang of it. Just a matter of understanding what `(.)` and `($)` do.
